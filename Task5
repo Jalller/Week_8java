@@ -1,0 +1,62 @@
+//Datamatik
+public class DatamatikTask5 {
+
+    public static void main(String[] args) {
+        Student student = new Student("Ib", 3, false, "1.a");
+        Student student1 = new Student("bo", 33, false, "2.a");
+        Student student2 = new Student("lis", 31, true, "4.a");
+        Student student3 = new Student("karl", 335, false, "3.a");
+        Student student4 = new Student("Niels", 36, false, "1.b");
+        Student student5 = new Student("Mikkel", 38, false, "2.b");
+        Student student6 = new Student("Hans", 39, false, "1.c");
+        Student student7 = new Student("Liv", 33, true, "1.d");
+        Student student8 = new Student("paul", 39, false, "1.e");
+        Student student9 = new Student("theis", 30, false, "1.f");
+        Student[] students = new Student[10];
+        students = new Student[]{student, student1, student2, student3, student4, student5, student6, student7, student8, student9};
+        getNameByIndex(students, 3);
+        getIndexOfName(students,"Ib");
+        getIndexOfName(students,"karl");
+        getIndexOfName(students,"Karl");
+    }
+
+    public static String getNameByIndex(Student[] students, int index) {
+        System.out.println(students[index]);
+        System.out.println(students[index].name);
+        return students[index].name;
+    }
+
+    public static int getIndexOfName(Student[] students, String name) {
+        int indexOf=0;
+        for (int index = 0; index < students.length - 1; index++) {
+            if (students[index].name.equals(name)) {
+                System.out.println("At index: " + index + " The name is" + name);
+                indexOf=index;
+            } else {
+                System.out.println("no such name");
+            }
+
+        }
+        return indexOf;
+    }
+
+}
+
+class Student {
+    String name;
+    int age;
+    boolean isFemale;
+    String datamatikerTeam;
+
+    int id;
+
+    Student(String tmpName, int tmpAge, boolean tmpIsFemale, String tmpDatamatikerTeam) {
+        this.name = tmpName;
+        this.age=tmpAge;
+        this.isFemale=tmpIsFemale;
+        this.datamatikerTeam=tmpDatamatikerTeam;
+    }
+    void printStudent() {
+        System.out.println("Name " + name + " age " + age + " isFemale " + isFemale + " datamatikerteam " + datamatikerTeam);
+    }
+}
